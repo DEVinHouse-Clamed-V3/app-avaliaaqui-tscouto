@@ -22,12 +22,6 @@ Little application developed for the Senai's DEVinHouse class, mainly using <str
   <img src="https://github.com/tscouto/imagens/blob/main/assets/tela%20cadastro.jpg" alt="Activity" width="425" height="800">
 </div>
 
-<h2>Picker List</h2>
-<p>I used on the feedback form, where you're able to select the products based on what is available on the database.</p>
-<div style="display: flex; justify-content: center;">
-  <img src="https://github.com/user-attachments/assets/a9083bd0-1d4b-4c6e-9877-be88f66e3020" alt="Activity" width="425" height="800">
-</div>
-
 <h1> Functionalities </h1>
 <ul>
   <li>You're able to see a range of products available in our database.</li>
