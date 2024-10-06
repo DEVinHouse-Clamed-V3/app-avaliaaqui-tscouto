@@ -5,6 +5,19 @@ Little application developed for the Senai's DEVinHouse class, mainly using <str
 <p>I'll be displaying a little peak in how the app looks.</p>
 <p>Just as requested on trello.</p>
 
+<h1>Overview of the Project</h1>
+<p>This section provides a glimpse into the app's design and features.</p>
+<p>As requested on Trello.</p> 
+<h2>Home Screen</h2> <
+div style="display: flex; justify-content: center;"> 
+<img src="https://github.com/tscouto/imagens/blob/main/assets/tela%20principal.jpg" alt="Home Screen" width="425" height="800"> 
+</div> 
+<h2>Products Screen</h2> <p>Here, you can view all the PlayStation games available in our database.</p> 
+<div style="display: flex; justify-content: center;"> 
+  
+  <img
+
+
 <h2>Home Screen</h2>
 <div style="display: flex; justify-content: center;">
   <img src="https://github.com/tscouto/imagens/blob/main/assets/tela%20principal.jpg" alt="messages" width="425" height="800">
