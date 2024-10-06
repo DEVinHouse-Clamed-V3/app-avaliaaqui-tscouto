@@ -7,19 +7,19 @@ Little application developed for the Senai's DEVinHouse class, mainly using <str
 
 <h2>Home Screen</h2>
 <div style="display: flex; justify-content: center;">
-  <img src="https://github.com/tscouto/imagens/blob/main/assets/tela%20cadastro.jpg" alt="messages" width="425" height="800">
+  <img src="https://github.com/tscouto/imagens/blob/main/assets/tela%20principal.jpg" alt="messages" width="425" height="800">
 </div>
 
 <h2>Products screen</h2>
 <p>Where all products on my database are being displayed.</p>
 <div style="display: flex; justify-content: center;">
-  <img src="https://github.com/user-attachments/assets/3d8ce21f-9de2-4dc6-bf60-f052850d89cd" alt="Tasks" width="425" height="800">
+  <img src="[https://github.com/user-attachments/assets/3d8ce21f-9de2-4dc6-bf60-f052850d89cd](https://github.com/tscouto/imagens/blob/main/assets/tela%20de%20listagem%20de%20jogos.jpg)" alt="Tasks" width="425" height="800">
 </div>
 
 <h2>Feedback form screen</h2>
 <p>This screen is where the user evaluate the product based on his experience.</p>
 <div style="display: flex; justify-content: center;">
-  <img src="https://github.com/user-attachments/assets/95cc00b0-afa6-4c08-baa7-58f97823c73e" alt="Activity" width="425" height="800">
+  <img src="https://github.com/tscouto/imagens/blob/main/assets/tela%20cadastro.jpg" alt="Activity" width="425" height="800">
 </div>
 
 <h2>Picker List</h2>
