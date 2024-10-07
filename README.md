@@ -13,7 +13,7 @@ Little application developed for the Senai's DEVinHouse class, mainly using <str
 <div style="display: flex; justify-content: center;">
 <img src="https://github.com/tscouto/imagens/blob/main/assets/tela%20principal.jpg" alt="Home Screen" width="425" height="800"> 
 </div> 
-<h2>Products Screen</h2> <p>Here, you can view all the PlayStation games available in our database.</p> 
+
 <div style="display: flex; justify-content: center;"> 
   
 
@@ -27,6 +27,7 @@ Little application developed for the Senai's DEVinHouse class, mainly using <str
 <p>Where all products on my database are being displayed.</p>
 <div style="display: flex; justify-content: center;">
   <img src="[https://github.com/user-attachments/assets/3d8ce21f-9de2-4dc6-bf60-f052850d89cd](https://github.com/tscouto/imagens/blob/main/assets/tela%20de%20listagem%20de%20jogos.jpg)" alt="Tasks" width="425" height="800">
+  <h2>Products Screen</h2> <p>Here, you can view all the PlayStation games available in our database.</p> 
 </div>
 
 <h2>Feedback form screen</h2>
