@@ -10,7 +10,7 @@ Little application developed for the Senai's DEVinHouse class, mainly using <str
 <p>As requested on Trello.</p> 
 
 <h2>Home Screen</h2> <
-div style="display: flex; justify-content: center;"> 
+div style="display: flex; justify-content: "center";> 
 <img src="https://github.com/tscouto/imagens/blob/main/assets/tela%20principal.jpg" alt="Home Screen" width="425" height="800"> 
 </div> 
 <h2>Products Screen</h2> <p>Here, you can view all the PlayStation games available in our database.</p> 
