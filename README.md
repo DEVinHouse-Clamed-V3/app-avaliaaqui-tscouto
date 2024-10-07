@@ -9,17 +9,7 @@ Little application developed for the Senai's DEVinHouse class, mainly using <str
 <p>This section provides a glimpse into the app's design and features.</p>
 <p>As requested on Trello.</p> 
 
-<h2>Home Screen</h2> <
-<div style="display: flex; justify-content: center;">
-<img src="https://github.com/tscouto/imagens/blob/main/assets/tela%20principal.jpg" alt="Home Screen" width="425" height="800"> 
-</div> 
-
-<div style="display: flex; justify-content: center;"> 
-  
-
-
 <h2>Home Screen</h2>
-
   <img src="https://github.com/tscouto/imagens/blob/main/assets/tela%20principal.jpg" alt="messages" width="425" height="800">
 </div>
 
@@ -34,14 +24,15 @@ Little application developed for the Senai's DEVinHouse class, mainly using <str
 <p>This screen is where the user evaluate the product based on his experience.</p>
 <div style="display: flex; justify-content: center;">
   <img src="https://github.com/tscouto/imagens/blob/main/assets/tela%20cadastro.jpg" alt="Activity" width="425" height="800">
+   <p>This screen allows users to evaluate a game based on their experience.</p> 
 </div>
 
 <h1> Functionalities </h1>
 <ul>
-  <li>You're able to see a range of products available in our database.</li>
-  <li>You're able to see info about the product, such as name, price, and a little description.</li>
-  <li>in the form you're able to rate the product by selecting it from our list, inputing your name, email, a little description about your experience, select from good to bad your experience using the buttons provided and being able mark a checkbox to tell us if you would recommend the product.</li>
-  <li>Very simple and user friendly interface.</li>
+  <li>Browse PlayStation games: Users can view a variety of PlayStation games from the database.</li>
+  <li>View game details: Information about each game, including its name, price, and a short description, is available.</li>
+  <li>Submit a review: Users can select a game, enter their name and email, provide a brief review, rate the game, and indicate whether they would recommend it.</li>
+  <li>User-friendly interface: The interface is simple and easy to navigate.</li>
 </ul>
 
 <h1>Technologies used </h1>
