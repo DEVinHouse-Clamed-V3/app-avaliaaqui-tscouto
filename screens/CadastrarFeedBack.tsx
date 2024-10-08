@@ -22,6 +22,7 @@ export default function CadastrarFeedBack({
   navigation: NavigationProp<any>;
   route: any;
 }) {
+  const productId = route.params?.productId;
   const [selectButton, setSelectButton] = useState(''); // Corrigido nome da variável
   const ArrayButton: ButtonType[] = ['TOP', 'Bom', 'Medio', 'Pessimo'];
   const [isDone, setIsDone] = useState(false);
@@ -31,7 +32,7 @@ export default function CadastrarFeedBack({
   const [loading, setLoading] = useState(false);
 
   const listForm = {
-    productId: route.params.productId,
+    productId: productId,
     name: name,
     email: email,
     feedback: feedback,
