@@ -27,22 +27,18 @@ export default function TelaPrincipal({
   return (
     <View style={styles.container}>
       {loading ? (
-        // Mostrar a animação de carregamento por 3 segundos
         <LottieView
           autoPlay
-          loop={false} // Pode ser false se quiser que a animação não fique em loop
+          loop={false}
           style={{ width: 400, height: 350 }}
           source={require('../assets/Animation - 1728347197598.json')}
         />
       ) : (
-        // Após a animação, mostrar a tela principal
         <>
           <View style={styles.viewImages}>
             <Image
               style={styles.image}
-              source={{
-                uri: 'https://e7.pngegg.com/pngimages/24/817/png-clipart-playstation-4-raiders-of-the-broken-planet-playstation-network-playstation-plus-playstation-electronics-text-thumbnail.png',
-              }}
+              source={require('../assets/logo PLAYSTATION.png')}
             />
           </View>
           <View style={styles.viewCabecalho}>
