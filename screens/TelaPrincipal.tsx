@@ -2,40 +2,65 @@ import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View, Image, TouchableOpacity } from 'react-native';
 import { NavigationProp } from '@react-navigation/native';
 import { globalStyles } from '../global/StylesGlobal';
+import LottieView from 'lottie-react-native';
+import { useEffect, useState } from 'react';
 
 export default function TelaPrincipal({
   navigation,
 }: {
   navigation: NavigationProp<any>;
 }) {
+  const [loading, setLoading] = useState(true);
+
   function navigationCadastro() {
-    navigation.navigate('ListGames'); // Altere para corresponder ao nome da tela
+    navigation.navigate('ListGames');
   }
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setLoading(false);
+    }, 3000);
+
+    return () => clearTimeout(timer);
+  }, []);
 
   return (
     <View style={styles.container}>
-      <View style={styles.viewImages}>
-        <Image
-          style={styles.image}
-          source={{
-            uri: 'https://e7.pngegg.com/pngimages/24/817/png-clipart-playstation-4-raiders-of-the-broken-planet-playstation-network-playstation-plus-playstation-electronics-text-thumbnail.png',
-          }}
+      {loading ? (
+        // Mostrar a animação de carregamento por 3 segundos
+        <LottieView
+          autoPlay
+          loop={false} // Pode ser false se quiser que a animação não fique em loop
+          style={{ width: 400, height: 350 }}
+          source={require('../assets/Animation - 1728347197598.json')}
         />
-      </View>
-      <View style={styles.viewCabecalho}>
-        <Text style={styles.textCabecalho}>Melhores games PLAYSTATION</Text>
-      </View>
-      <View style={styles.viewTextPrincipal}>
-        <Text style={styles.textPrincipal}>
-          Avalie os melhores games da saga PLAYSTATION AQUI
-        </Text>
-      </View>
-      <TouchableOpacity
-        style={globalStyles.stylishButton}
-        onPress={navigationCadastro}
-      >
-        <Text style={styles.buttonText}>Clique Aqui</Text>
-      </TouchableOpacity>
+      ) : (
+        // Após a animação, mostrar a tela principal
+        <>
+          <View style={styles.viewImages}>
+            <Image
+              style={styles.image}
+              source={{
+                uri: 'https://e7.pngegg.com/pngimages/24/817/png-clipart-playstation-4-raiders-of-the-broken-planet-playstation-network-playstation-plus-playstation-electronics-text-thumbnail.png',
+              }}
+            />
+          </View>
+          <View style={styles.viewCabecalho}>
+            <Text style={styles.textCabecalho}>Melhores games PLAYSTATION</Text>
+          </View>
+          <View style={styles.viewTextPrincipal}>
+            <Text style={styles.textPrincipal}>
+              Avalie os melhores games da saga PLAYSTATION AQUI
+            </Text>
+          </View>
+          <TouchableOpacity
+            style={globalStyles.stylishButton}
+            onPress={navigationCadastro}
+          >
+            <Text style={styles.buttonText}>Clique Aqui</Text>
+          </TouchableOpacity>
+        </>
+      )}
       <StatusBar style="auto" />
     </View>
   );

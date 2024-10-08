@@ -1,6 +1,6 @@
 import axios from 'axios';
 import { StatusBar } from 'expo-status-bar';
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useMemo } from 'react';
 import {
   Alert,
   SafeAreaView,
@@ -21,7 +21,7 @@ type ProspsList = {
   description: string;
   image: string;
 };
-import { NavigationProp, useFocusEffect } from '@react-navigation/native';
+import { NavigationProp } from '@react-navigation/native';
 import LottieView from 'lottie-react-native';
 import { globalStyles } from '../global/StylesGlobal';
 
@@ -30,18 +30,26 @@ export default function ListaJogos({
 }: {
   navigation: NavigationProp<any>;
 }) {
-  const [jogos, setJogos] = useState<ProspsList[]>([]);
+  const [jogosOriginais, setJogosOriginais] = useState<ProspsList[]>([]); // Lista original de jogos
   const [loading, setLoading] = useState(false);
   const [search, setSearch] = useState('');
 
-  const jogosFilter = jogos.filter(jogo =>
-    jogo.name.toUpperCase().includes(search)
-  );
+  // useMemo para filtrar jogos apenas quando a pesquisa mudar
+  const jogosFiltrados = useMemo(() => {
+    if (search !== '') {
+      return jogosOriginais.filter(
+        jogo => jogo.name.toLowerCase().includes(search.toLowerCase()) // Busca case insensitive
+      );
+    } else {
+      return jogosOriginais; // Mostrar todos os jogos se a pesquisa estiver vazia
+    }
+  }, [search, jogosOriginais]);
 
   function navigationCadastro({ produtoId }: { produtoId: number }) {
     navigation.navigate('CadastrarFeedBack', { productId: produtoId }); // Altere para corresponder ao nome da tela
   }
 
+  // Carrega a lista de jogos da API ao montar o componente
   useEffect(() => {
     setLoading(true);
     axios
@@ -49,7 +57,7 @@ export default function ListaJogos({
       .then(response => {
         setTimeout(() => {
           setLoading(false);
-          setJogos(response.data); // Acessando a propriedade "products"
+          setJogosOriginais(response.data); // Carregar a lista original de jogos
         }, 3000);
       })
       .catch(() => {
@@ -81,10 +89,9 @@ export default function ListaJogos({
             />
           ) : (
             <FlatList
-              data={jogosFilter}
+              data={jogosFiltrados} // Exibir a lista filtrada
               keyExtractor={item => item.id.toString()}
               ListEmptyComponent={() => (
-                // <Text style={styles.TextEmpty}>Não existem itens no Array</Text>
                 <View style={styles.ViewImageEmpty}>
                   <Image
                     source={{
@@ -124,7 +131,6 @@ const styles = StyleSheet.create({
     flex: 1,
     padding: 20,
     backgroundColor: '#003791',
-    // justifyContent: 'center',
   },
   ViewTile: {
     marginTop: 10,
@@ -173,22 +179,6 @@ const styles = StyleSheet.create({
     shadowRadius: 2,
     elevation: 5,
   },
-  // textInput: {
-  //   height: 50,
-  //   borderColor: '#ddd',
-  //   borderWidth: 1,
-  //   borderRadius: 10,
-  //   paddingHorizontal: 15,
-  //   marginBottom: 20,
-  //   backgroundColor: '#f9f9f9',
-  //   fontSize: 16,
-  //   color: '#333',
-  //   shadowColor: '#000',
-  //   shadowOffset: { width: 0, height: 2 },
-  //   shadowOpacity: 0.1,
-  //   shadowRadius: 3,
-  //   elevation: 2,
-  // },
   TextEmpty: {
     fontWeight: 'bold',
     color: 'white',
@@ -202,18 +192,6 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
   },
-  // stylishButton: {
-  //   marginTop: 30,
-  //   backgroundColor: '#2f66df', // Cor de fundo do botão
-  //   paddingVertical: 15,
-  //   paddingHorizontal: 30,
-  //   borderRadius: 30, // Arredondamento das bordas
-  //   shadowColor: '#000', // Cor da sombra
-  //   shadowOffset: { width: 0, height: 2 }, // Posição da sombra
-  //   shadowOpacity: 0.8, // Opacidade da sombra
-  //   shadowRadius: 8, // Distância da sombra
-  //   elevation: 5, // Para funcionar no Android
-  // },
   buttonText: {
     color: '#fff',
     fontSize: 16,
